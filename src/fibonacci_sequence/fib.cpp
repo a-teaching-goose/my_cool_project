@@ -6,17 +6,16 @@ int fib(int n) {
         return 1;
     }
 
-    int *data = new int[n + 1]; // why +1?
-    data[0] = 0;
-    data[1] = 1;
+    // O(1) for space
+    int v1 = 0;
+    int v2 = 1;
 
+    // O(n) for time
     for (int i = 2; i <= n; ++i) {
-        data[i] = data[i - 1] + data[i - 2];
+        int v3 = v1 + v2;
+        v1 = v2;
+        v2 = v3;
     }
 
-    int ret = data[n];
-
-    delete[]data;   // make sure new'd memory is deleted to prevent memory leak
-
-    return ret;
+    return v2;
 }
