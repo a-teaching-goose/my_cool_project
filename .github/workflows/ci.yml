@@ -5,6 +5,8 @@ name: CSS BootUp
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   BootUp_CI_Bot:
