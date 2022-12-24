@@ -7,8 +7,8 @@ int fib(int n) {
     }
 
     // O(1) for space
-    int v1 = 0;
     int v2 = 1;
+    int v1 = 0;
 
     // O(n) for time
     for (int i = 2; i <= n; ++i) {
